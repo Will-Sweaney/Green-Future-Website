@@ -17,7 +17,7 @@ sequelize.authenticate()
     console.error('Unable to connect to the database:', err);
   });
 
-app.use(express.json()); // Middleware to parse JSON requests
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('get good');
