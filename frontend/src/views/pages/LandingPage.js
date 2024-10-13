@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 
 // core components
-import LoginNavbar from "components/Navbars/LoginNavbar.js";
+import SecondaryNavbar from "components/Navbars/SecondaryNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
@@ -33,7 +33,7 @@ function LandingPage() {
   }, []);
   return (
     <>
-      <LoginNavbar />
+      <SecondaryNavbar />
       <div className="wrapper">
         <LandingPageHeader />
         <div className="section section-about-us">

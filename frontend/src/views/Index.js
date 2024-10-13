@@ -22,7 +22,7 @@ import NucleoIcons from "./index-sections/NucleoIcons.js";
 import CompleteExamples from "./index-sections/CompleteExamples.js";
 import SignUp from "./login/SignUp.js";
 import Examples from "./index-sections/Examples.js";
-import Download from "./index-sections/Download.js";
+import Donate from "./index-sections/Donate.js";
 
 function Index() {
   React.useEffect(() => {
@@ -54,7 +54,7 @@ function Index() {
           <CompleteExamples />
           <SignUp />
           <Examples />
-          <Download />
+          <Donate />
         </div>
         <DarkFooter />
       </div>

@@ -16,19 +16,18 @@ import {
 
 // core components
 import SecondaryNavbar from "components/Navbars/SecondaryNavbar.js";
-import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
-function ProfilePage() {
+function CarbonCalc() {
   const [pills, setPills] = React.useState("2");
   React.useEffect(() => {
-    document.body.classList.add("profile-page");
+    document.body.classList.add("carbon-footprint-calculator");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("profile-page");
+      document.body.classList.remove("carbon-footprint-calculator");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -36,24 +35,9 @@ function ProfilePage() {
     <>
       <SecondaryNavbar />
       <div className="wrapper">
-        <ProfilePageHeader />
         <div className="section">
           <Container>
             <div className="button-container">
-              <Button className="btn-round" color="info" size="lg">
-                Follow
-              </Button>
-              <Button
-                className="btn-round btn-icon"
-                color="default"
-                id="tooltip515203352"
-                size="lg"
-              >
-                <i className="fab fa-twitter"></i>
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip515203352">
-                Follow me on Twitter
-              </UncontrolledTooltip>
               <Button
                 className="btn-round btn-icon"
                 color="default"
@@ -66,7 +50,7 @@ function ProfilePage() {
                 Follow me on Instagram
               </UncontrolledTooltip>
             </div>
-            <h3 className="title">About me</h3>
+            <h3 className="title">Carbon Footprint Calculator</h3>
             <h5 className="description">
               An artist of considerable range, Ryan — the name taken by
               Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
@@ -222,4 +206,4 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default CarbonCalc;

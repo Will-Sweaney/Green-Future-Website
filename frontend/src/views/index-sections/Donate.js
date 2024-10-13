@@ -5,13 +5,13 @@ import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
 // core components
 
-function Download() {
+function Donate() {
   return (
     <>
       <div
-        className="section section-download"
+        className="section section-donate"
         data-background-color="black"
-        id="download-section"
+        id="donate-section"
       >
         <Container>
           <Row className="justify-content-md-center">
@@ -146,4 +146,4 @@ function Download() {
   );
 }
 
-export default Download;
+export default Donate;

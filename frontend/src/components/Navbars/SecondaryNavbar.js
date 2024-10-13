@@ -16,7 +16,7 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-function LoginNavbar() {
+function SecondaryNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -175,4 +175,4 @@ function LoginNavbar() {
   );
 }
 
-export default LoginNavbar;
+export default SecondaryNavbar;
