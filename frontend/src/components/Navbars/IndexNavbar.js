@@ -109,7 +109,7 @@ function IndexNavbar() {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem to="/carbon-footprint-calculator" tag={Link}>
-                    <i className="now-ui-icons design_bullet-list-67 mr-1"></i>
+                    <i className="now-ui-icons education_paper mr-1"></i>
                     Carbon Footprint Calculator
                   </DropdownItem>
                   <DropdownItem to="/blog" tag={Link}>
