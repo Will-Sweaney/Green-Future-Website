@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import { Container } from "reactstrap";
@@ -15,15 +16,15 @@ function TransparentFooter() {
                 href="https://www.creative-tim.com?ref=nukr-transparent-footer"
                 target="_blank"
               >
-                Creative Tim
+                Carbon Calculator
               </a>
             </li>
             <li>
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-transparent-footer"
-                target="_blank"
+                to="/landing-page"
+                tag={Link}
               >
-                About Us
+                Our Mission
               </a>
             </li>
             <li>
@@ -37,21 +38,7 @@ function TransparentFooter() {
           </ul>
         </nav>
         <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by{" "}
-          <a
-            href="https://www.invisionapp.com?ref=nukr-transparent-footer"
-            target="_blank"
-          >
-            Invision
-          </a>
-          . Coded by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=nukr-transparent-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>
-          .
+          © {new Date().getFullYear()}, Green Future{" "}
         </div>
       </Container>
     </footer>

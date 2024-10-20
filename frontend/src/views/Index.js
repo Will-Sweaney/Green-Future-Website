@@ -20,7 +20,6 @@ import Javascript from "./index-sections/Javascript.js";
 import Carousel from "./index-sections/Carousel.js";
 import NucleoIcons from "./index-sections/NucleoIcons.js";
 import CompleteExamples from "./index-sections/CompleteExamples.js";
-import SignUp from "./login/SignUp.js";
 import Examples from "./index-sections/Examples.js";
 import Donate from "./index-sections/Donate.js";
 
@@ -52,7 +51,6 @@ function Index() {
           <Carousel />
           <NucleoIcons />
           <CompleteExamples />
-          <SignUp />
           <Examples />
           <Donate />
         </div>

@@ -52,15 +52,15 @@ function IndexNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="/"
-              target="_blank"
+              to="/index"
+              tag={Link}
               id="navbar-brand"
             >
             <img
               alt="Green Future"
               className="main-logo"
               src={require("assets/img/main-logo.png")}
-            ></img>  
+            ></img>
             </NavbarBrand>
             <button
               className="navbar-toggler navbar-toggler"
@@ -85,15 +85,11 @@ function IndexNavbar() {
               <NavItem>
                 <NavLink
                   href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("donate-section")
-                      .scrollIntoView();
-                  }}
+                  to="/landing-page"
+                  tag={Link}
                 >
                   <i className="now-ui-icons ui-2_favourite-28"></i>
-                  <p>Donate</p>
+                  <p>Our Mission</p>
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav>

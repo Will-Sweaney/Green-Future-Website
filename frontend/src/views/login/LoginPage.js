@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 // reactstrap components
 import {
   Button,
@@ -50,13 +50,10 @@ function LoginPage() {
               <Card className="card-login card-plain">
                 <Form action="" className="form" method="">
                   <CardHeader className="text-center">
-                    <div className="logo-container">
-                      <img
-                        alt="..."
-                        src={require("assets/img/main-logo.png")}
-                      ></img>
-                    </div>
                   </CardHeader>
+                  <h3>
+                    Login
+                  </h3>
                   <CardBody>
                     <InputGroup
                       className={
@@ -66,11 +63,11 @@ function LoginPage() {
                     >
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i className="now-ui-icons users_circle-08"></i>
+                          <i className="now-ui-icons ui-1_email-85"></i>
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="First Name..."
+                        placeholder="Email"
                         type="text"
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
@@ -84,12 +81,12 @@ function LoginPage() {
                     >
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i className="now-ui-icons text_caps-small"></i>
+                          <i className="now-ui-icons objects_key-25"></i>
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
-                        type="text"
+                        placeholder="Password"
+                        type="password"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
                       ></Input>
@@ -104,14 +101,14 @@ function LoginPage() {
                       onClick={(e) => e.preventDefault()}
                       size="lg"
                     >
-                      Get Started
+                      Login
                     </Button>
                     <div className="pull-left">
                       <h6>
                         <a
                           className="link"
                           href="./signup-page"
-                          onClick={(e) => e.preventDefault()}
+                          tag={Link}
                         >
                           Create Account
                         </a>

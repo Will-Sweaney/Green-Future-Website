@@ -12,6 +12,7 @@ import {
   UncontrolledTooltip,
   Row,
   Col,
+  Badge
 } from "reactstrap";
 
 import DefaultFooter from "components/Footers/DefaultFooter.js";
@@ -32,8 +33,10 @@ function CarbonCalc() {
   const [inputClass, setInputClass] = useState('');
   const [distDrivenValue, setDistDrivenValue] = useState('');
   const [fuelType, setFuelType] = useState('petrol');
+  const [waterUsageValue, setWaterUsageValue] = useState('');
+  const [electricityUsageValue, setElectricityUsageValue] = useState('');
 
-  const intInputCheck = (e) => {
+  const intInputCheck = (e, setState) => {
     const value = e.target.value;
     
     if (/^\d+$/.test(value)) {
@@ -43,15 +46,22 @@ function CarbonCalc() {
     } else {
       setInputClass('has-danger');
     }
-    setDistDrivenValue(value);
+    setState(value);
   };
-  
-  const kgPerKm = fuelType === 'petrol' ? 0.25227 : 0.268
 
+  const kgPerKm = fuelType === 'petrol' ? 0.25227 : 0.268;
+  const waterKgPerLiter = 0.001;
+  const electricityKgPerKWh = 0.475;
 
-  const yearlyFootprintResult = distDrivenValue ? (parseInt(distDrivenValue) * kgPerKm * 52).toFixed(2) : '';
-  const dailyFootprintResult = distDrivenValue ? (parseInt(distDrivenValue) * kgPerKm / 7).toFixed(2) : '';
+  const weeklyFuelFootprint = distDrivenValue ? (parseInt(distDrivenValue) * kgPerKm).toFixed(2) : 0;
+  const weeklyWaterFootprint = waterUsageValue ? (parseInt(waterUsageValue) * waterKgPerLiter).toFixed(2) : 0;
+  const weeklyElectricityFootprint = electricityUsageValue ? (parseInt(electricityUsageValue) * electricityKgPerKWh).toFixed(2) : 0;
+
+  const totalWeeklyFootprint = (parseFloat(weeklyFuelFootprint) + parseFloat(weeklyWaterFootprint) + parseFloat(weeklyElectricityFootprint)).toFixed(2);
   
+  const totalDailyFootprint = (parseFloat(totalWeeklyFootprint) / 7).toFixed(2);
+  const totalYearlyFootprint = (parseFloat(totalWeeklyFootprint) * 52).toFixed(2);
+
   return (
     <>
       <div className="wrapper">
@@ -74,9 +84,9 @@ function CarbonCalc() {
             </div>
             <h3 className="title">Carbon Footprint Calculator</h3>
             <h5 className="description">
-            This calculator helps you estimate your carbon footprint by analyzing various aspects of your lifestyle, such as energy use, transportation, waste production, and dietary choices. Simply input details about your daily habits, and the calculator will provide an estimate of your total greenhouse gas emissions. You'll also receive suggestions on how to lower your carbon footprint and make more sustainable choices.
+            This calculator helps you estimate your carbon footprint by analyzing various aspects of your lifestyle, such as energy use, transportation, and water usage. Simply input details about your weekly activities, and the calculator will provide an estimate of your total greenhouse gas emissions.
             </h5>
-            <h5 className="title">Fuel Type</h5>
+            <h5 className="title">Vehicle Fuel Type</h5>
             <FormGroup check className="form-check-radio">
               <Label check>
                 <Input
@@ -88,6 +98,9 @@ function CarbonCalc() {
                   type="radio"
                   onChange={() => setFuelType('petrol')}
                 ></Input>
+                <UncontrolledTooltip delay={0} target="fuelTypePetrol">
+                  On average, cars in the U.S. emit about 404 grams of CO2 per mile driven.
+                </UncontrolledTooltip>
                 <span className="form-check-sign"></span>
                 Petrol
               </Label>
@@ -102,37 +115,80 @@ function CarbonCalc() {
                   type="radio"
                   onChange={() => setFuelType('diesel')}
                 ></Input>
+                <UncontrolledTooltip delay={0} target="fuelTypeDiesel">
+                  On average, diesel vehicles emit about 2.68 kg of CO2 per liter of fuel burned.
+                </UncontrolledTooltip>
                 <span className="form-check-sign"></span>
                 Diesel
               </Label>
             </FormGroup>
-            <h5 className="title">Kilometers Driven Per Week</h5>
-            <div id="inputs">
-              <FormGroup
-                className={inputClass}
-                onChange={intInputCheck}
-                >
-                <Input
-                  defaultValue=""
-                  placeholder="Distance Driven (km)"
-                  type="text"
-                />
-              </FormGroup>
-            </div>
+            <h5 className="title">Distance Driven Per Week (km)</h5>
+            <FormGroup
+              className={inputClass}
+              onChange={(e) => intInputCheck(e, setDistDrivenValue)}
+            >
+              <Input
+                defaultValue=""
+                placeholder="Distance Driven (km)"
+                type="text"
+              />
+            </FormGroup>
+            <h5 className="title">Water Usage Per Week (Liters)</h5>
+            <FormGroup
+              className={inputClass}
+              onChange={(e) => intInputCheck(e, setWaterUsageValue)}
+            >
+              <Input
+                defaultValue=""
+                placeholder="Water Usage (Liters)"
+                type="text"
+              />
+            </FormGroup>
+
+            <h5 className="title">Electricity Usage Per Week (kWh)</h5>
+            <FormGroup
+              className={inputClass}
+              onChange={(e) => intInputCheck(e, setElectricityUsageValue)}
+            >
+              <Input
+                defaultValue=""
+                placeholder="Electricity Usage (kWh)"
+                type="text"
+              />
+            </FormGroup>
             <div className="nav-align-center">
-              <h3 className="title">Average Carbon Footprint Usage</h3>
+              {totalDailyFootprint > 0 && (
+                <>
+                  <h3 className="title">Total Carbon Footprint</h3>
+                  {totalDailyFootprint >= 0 && totalDailyFootprint <= 5 && (
+                    <Badge color="success" className="mr-1">
+                      Great Environmental Awareness
+                    </Badge>
+                  )}
+                  {totalDailyFootprint > 5 && totalDailyFootprint <= 25 && (
+                    <Badge color="warning" className="mr-1" href="https://explore.panda.org/climate/how-to-reduce-your-carbon-footprint">
+                      Room For Improvement
+                    </Badge>
+                  )}
+                  {totalDailyFootprint > 25 && (
+                    <Badge color="danger" className="mr-1" href="https://explore.panda.org/climate/how-to-reduce-your-carbon-footprint">
+                      Reduce Usage Now
+                    </Badge>
+                  )}
+                </>
+              )}
               <Row className="d-flex justify-content-center align-items-center">
                 <Col md="5" className="text-center">
                   <h3>
-                    {dailyFootprintResult !== '' && (
-                      <p>Daily: {dailyFootprintResult}kg</p>
+                    {totalDailyFootprint > 0 && (
+                      <p>Daily: {totalDailyFootprint}kg</p>
                     )}
                   </h3>
                 </Col>
                 <Col md="5" className="text-center">
                   <h3>
-                    {yearlyFootprintResult !== '' && (
-                      <p>Yearly: {yearlyFootprintResult}kg</p>
+                    {totalYearlyFootprint > 0 && (
+                      <p>Yearly: {totalYearlyFootprint}kg</p>
                     )}
                   </h3>
                 </Col>
@@ -140,8 +196,8 @@ function CarbonCalc() {
             </div>
           </Container>
         </div>
-        <DefaultFooter />
       </div>
+      <DefaultFooter />
     </>
   );
 }

@@ -36,9 +36,6 @@ function Javascript() {
               >
                 Launch Modal
               </Button>
-              <Button color="info" onClick={() => setModal2(true)}>
-                Launch Modal Mini
-              </Button>
               <Modal isOpen={modal1} toggle={() => setModal1(false)}>
                 <div className="modal-header justify-content-center">
                   <button
@@ -74,6 +71,9 @@ function Javascript() {
                   </Button>
                 </div>
               </Modal>
+              <Button color="info" onClick={() => setModal2(true)}>
+                Launch Modal Mini
+              </Button>
               <Modal
                 modalClassName="modal-mini modal-info"
                 toggle={() => setModal2(false)}

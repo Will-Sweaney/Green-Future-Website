@@ -1,28 +1,43 @@
 const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const { Pool } = require('pg');
+
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = 5000;
 
-const { Sequelize } = require('sequelize');
+app.use(cors());
+app.use(bodyParser.json());
 
-const sequelize = new Sequelize('green_future_db', 'root', 'thEro0t34', {
+const pool = new Pool({
+  user: 'postgres',
   host: 'localhost',
-  dialect: 'mysql',
+  database: 'gf-user-creds',
+  password: 'thEro0t34',
+  port: 5432,
 });
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
+app.post('/api/register', async (req, res) => {
+  const { username, email, password } = req.body;
 
-app.use(express.json());
+  try {
+    const userCheckQuery = 'SELECT * FROM users WHERE email = $1';
+    const userCheckResult = await pool.query(userCheckQuery, [email]);
 
-app.get('/', (req, res) => {
-  res.send('get good');
+    if (userCheckResult.rows.length > 0) {
+      return res.status(400).json({ success: false, message: 'User already exists.' });
+    }
+
+    const insertUserQuery = 'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *';
+    const newUser = await pool.query(insertUserQuery, [username, email, password]);
+
+    return res.status(201).json({ success: true, user: newUser.rows[0] });
+  } catch (error) {
+    console.error('Error registering user:', error);
+    return res.status(500).json({ success: false, message: 'Error registering user.' });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });

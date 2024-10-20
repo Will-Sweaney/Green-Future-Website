@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from "react";
-
+import { Link } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
 
@@ -31,10 +31,10 @@ function DefaultFooter() {
               </li>
               <li>
                 <a
-                  href="http://blog.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
+                  href="/landing-page"
+                  tag={Link}
                 >
-                  Donate
+                  Our Mission
                 </a>
               </li>
             </ul>
