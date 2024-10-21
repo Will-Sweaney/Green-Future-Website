@@ -13,15 +13,15 @@ function TransparentFooter() {
           <ul>
             <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-transparent-footer"
-                target="_blank"
+                href="/carbon-calculator"
+                tag={Link}
               >
                 Carbon Calculator
               </a>
             </li>
             <li>
               <a
-                to="/landing-page"
+                href="/landing-page"
                 tag={Link}
               >
                 Our Mission
@@ -29,8 +29,7 @@ function TransparentFooter() {
             </li>
             <li>
               <a
-                href="http://blog.creative-tim.com?ref=nukr-transparent-footer"
-                target="_blank"
+                href="#"
               >
                 Blog
               </a>

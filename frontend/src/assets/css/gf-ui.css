@@ -7917,7 +7917,7 @@ td.rdtYear:hover {
 }
 
 .clear-filter[filter-color="blue"] {
-  background: rgba(44, 44, 44, 0.2);
+  background: rgba(44, 44, 44, 0.1);
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(
     90deg,

@@ -200,7 +200,7 @@ function SignUp() {
             <div className="col text-center">
               <Button
                 className="btn-round btn-white"
-                color="default"
+                color="white"
                 to="/login-page"
                 outline
                 size="lg"

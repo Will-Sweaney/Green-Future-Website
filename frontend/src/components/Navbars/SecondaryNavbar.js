@@ -84,13 +84,7 @@ function SecondaryNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("donate-section")
-                      .scrollIntoView();
-                  }}
+                  href="#"
                 >
                   <i className="now-ui-icons objects_support-17"></i>
                   <p>Help</p>

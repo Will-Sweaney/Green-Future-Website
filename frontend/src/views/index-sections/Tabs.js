@@ -37,7 +37,7 @@ function Tabs() {
                     <NavItem>
                       <NavLink
                         className={pills === "1" ? "active" : ""}
-                        href="#pablo"
+                        href="#"
                         onClick={(e) => {
                           e.preventDefault();
                           setPills("1");
@@ -49,7 +49,7 @@ function Tabs() {
                     <NavItem>
                       <NavLink
                         className={pills === "2" ? "active" : ""}
-                        href="#pablo"
+                        href="#"
                         onClick={(e) => {
                           e.preventDefault();
                           setPills("2");
@@ -61,7 +61,7 @@ function Tabs() {
                     <NavItem>
                       <NavLink
                         className={pills === "3" ? "active" : ""}
-                        href="#pablo"
+                        href="#"
                         onClick={(e) => {
                           e.preventDefault();
                           setPills("3");
@@ -73,7 +73,7 @@ function Tabs() {
                     <NavItem>
                       <NavLink
                         className={pills === "4" ? "active" : ""}
-                        href="#pablo"
+                        href="#"
                         onClick={(e) => {
                           e.preventDefault();
                           setPills("4");

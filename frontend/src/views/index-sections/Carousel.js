@@ -15,18 +15,18 @@ import {
 const items = [
   {
     src: require("assets/img/bg1.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States"
+    altText: "Local Cleanup Operation, 2017",
+    caption: "Local Cleanup Operation, 2017"
   },
   {
     src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States"
+    altText: "Community Cleanup, 2019",
+    caption: "Community Cleanup, 2019"
   },
   {
     src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States"
+    altText: "Teaching The Effects of Climate Change, 2022",
+    caption: "Teaching The Effects of Climate Change, 2022"
   }
 ];
 
@@ -58,7 +58,7 @@ function CarouselSection() {
       <div className="section" id="carousel">
         <Container>
           <div className="title">
-            <h4>What we've done</h4>
+            <h4>Our contributions to saving the planet</h4>
           </div>
           <Row className="justify-content-center">
             <Col lg="8" md="12">
@@ -89,7 +89,7 @@ function CarouselSection() {
                 <a
                   className="carousel-control-prev"
                   data-slide="prev"
-                  href="#pablo"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     previous();
@@ -101,7 +101,7 @@ function CarouselSection() {
                 <a
                   className="carousel-control-next"
                   data-slide="next"
-                  href="#pablo"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     next();

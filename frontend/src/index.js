@@ -9,13 +9,10 @@ import "assets/demo/demo.css?v=1.5.0";
 import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // pages for this kit
 import Index from "views/Index.js";
-import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/login/LoginPage.js";
 import SignupPage from "views/login/SignUp.js"
 import LandingPage from "views/pages/LandingPage.js";
-import ProfilePage from "views/pages/ProfilePage.js";
 import CarbonCalc from "views/pages/CarbonCalc.js"
-import Blog from "views/pages/Blog.js"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,12 +20,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/index" element={<Index />} />
-      <Route path="/nucleo-icons" element={<NucleoIcons />} />
       <Route path="/landing-page" element={<LandingPage />} />
-      <Route path="/profile-page" element={<ProfilePage />} />
       <Route path="/login-page" element={<LoginPage />} />
       <Route path="/signup-page" element={<SignupPage />} />
-      <Route path="/blog" element={<Blog />} />
       <Route path="/carbon-footprint-calculator" element={<CarbonCalc />} />
 
       <Route path="*" element={<Navigate to="/index" replace />} />

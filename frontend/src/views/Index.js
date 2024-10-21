@@ -12,9 +12,8 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 // sections for this page
 import Intro from "./index-sections/Intro.js";
 import Tabs from "./index-sections/Tabs.js";
-import Javascript from "./index-sections/Javascript.js";
+import Motivations from "./index-sections/Motivations.js";
 import Carousel from "./index-sections/Carousel.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function Index() {
@@ -44,7 +43,7 @@ function Index() {
         <div className="main">
           <Intro />
           <Tabs />
-          <Javascript />
+          <Motivations />
           <Carousel />
         </div>
         <DefaultFooter />

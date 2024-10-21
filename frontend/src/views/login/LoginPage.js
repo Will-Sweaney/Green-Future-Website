@@ -73,7 +73,7 @@ function LoginPage() {
   return (
     <>
       <SecondaryNavbar />
-      <div className="page-header clear-filter" filter-color="blue">
+      <div className="page-header clear-filter">
         <div
           className="page-header-image"
           style={{
@@ -153,7 +153,7 @@ function LoginPage() {
                   </div>
                   <div className="pull-right">
                     <h6>
-                      <a className="link" href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <a className="link" href="#" onClick={(e) => e.preventDefault()}>
                         Need Help?
                       </a>
                     </h6>

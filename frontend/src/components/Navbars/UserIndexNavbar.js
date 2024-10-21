@@ -93,7 +93,6 @@ function UserIndexNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
-                  href="#pablo"
                   to="/landing-page"
                   tag={Link}
                 >
@@ -105,7 +104,7 @@ function UserIndexNavbar() {
                 <DropdownToggle
                   caret
                   color="default"
-                  href="#pablo"
+                  href="#"
                   nav
                   onClick={(e) => e.preventDefault()}
                 >
@@ -132,7 +131,7 @@ function UserIndexNavbar() {
                     className="nav-link btn-neutral"
                     caret
                     color="info"
-                    href="#pablo"
+                    href="#"
                     onClick={(e) => e.preventDefault()}
                   >
                   <i className="now-ui-icons users_circle-08 mr-1"></i>
