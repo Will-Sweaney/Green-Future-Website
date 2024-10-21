@@ -15,30 +15,54 @@ import {
   InputGroupText,
   InputGroup,
   Container,
-  Row
+  Row,
+  Modal,
+  ModalBody,
 } from "reactstrap";
 
 import SecondaryNavbar from "components/Navbars/SecondaryNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function SignUp() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  const [emailFocus, setEmailFocus] = React.useState(false);
-  
-  const [data, setData] = useState([]);
+  const [firstFocus, setFirstFocus] = useState(false);
+  const [lastFocus, setLastFocus] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+
+  const [modal2, setModal2] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
+
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:5000/api/data')
       .then((response) => response.json())
-      .then((data) => {
-        console.log('Fetched Data:', data);
-        setData(data);
-      })
+      .then((data) => console.log('Fetched Data:', data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
+
+  const validateForm = () => {
+    const { username, email, password } = formData;
+
+    if (username.length < 3) {
+      setWarningMessage("Username must be at least 3 characters long.");
+      return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setWarningMessage("Please enter a valid email address.");
+      return false;
+    }
+
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      setWarningMessage("Password must be at least 8 characters long, contain one uppercase letter and one number.");
+      return false;
+    }
+
+    return true;
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,7 +70,12 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
+    if (!validateForm()) {
+      setModal2(true);
+      return;
+    }
+
     fetch('http://localhost:5000/api/register', {
       method: 'POST',
       headers: {
@@ -56,11 +85,11 @@ function SignUp() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Registration Response:', data);
         if (data.success) {
-          navigate('/');
+          navigate('/login-page');
         } else {
-          console.error(data.message);
+          setWarningMessage(data.message);
+          setModal2(true);
         }
       })
       .catch((error) => console.error('Error during registration:', error));
@@ -184,6 +213,30 @@ function SignUp() {
         </div>
         <TransparentFooter />
       </div>
+      <Modal
+        modalClassName="modal-mini modal-info"
+        toggle={() => setModal2(false)}
+        isOpen={modal2}
+      >
+        <div className="modal-header justify-content-center">
+          <div className="modal-profile">
+            <i className="now-ui-icons ui-1_bell-53"></i>
+          </div>
+        </div>
+        <ModalBody>
+          <p>{warningMessage}</p>
+        </ModalBody>
+        <div className="modal-footer">
+          <Button
+            className="btn-neutral"
+            color="link"
+            type="button"
+            onClick={() => setModal2(false)}
+          >
+            Close
+          </Button>
+        </div>
+      </Modal>
     </>
   );
 }

@@ -18,7 +18,6 @@ import {
 // core components
 
 function Tabs() {
-  const [iconPills, setIconPills] = React.useState("1");
   const [pills, setPills] = React.useState("1");
   return (
     <>
@@ -26,120 +25,7 @@ function Tabs() {
         <Container>
           <Row>
             <Col className="ml-auto mr-auto" md="10" xl="6">
-              <p className="category">Tabs with Icons on Card</p>
-              <Card>
-                <CardHeader>
-                  <Nav className="justify-content-center" role="tablist" tabs>
-                    <NavItem>
-                      <NavLink
-                        className={iconPills === "1" ? "active" : ""}
-                        href="#pablo"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIconPills("1");
-                        }}
-                      >
-                        <i className="now-ui-icons objects_umbrella-13"></i>
-                        Home
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={iconPills === "2" ? "active" : ""}
-                        href="#pablo"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIconPills("2");
-                        }}
-                      >
-                        <i className="now-ui-icons shopping_cart-simple"></i>
-                        Profile
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={iconPills === "3" ? "active" : ""}
-                        href="#pablo"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIconPills("3");
-                        }}
-                      >
-                        <i className="now-ui-icons shopping_shop"></i>
-                        Messages
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={iconPills === "4" ? "active" : ""}
-                        href="#pablo"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIconPills("4");
-                        }}
-                      >
-                        <i className="now-ui-icons ui-2_settings-90"></i>
-                        Settings
-                      </NavLink>
-                    </NavItem>
-                  </Nav>
-                </CardHeader>
-                <CardBody>
-                  <TabContent
-                    className="text-center"
-                    activeTab={"iconPills" + iconPills}
-                  >
-                    <TabPane tabId="iconPills1">
-                      <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. So when you get something that has
-                        the name Kanye West on it, it’s supposed to be pushing
-                        the furthest possibilities. I will be the leader of a
-                        company that ends up being worth billions of dollars,
-                        because I got the answers. I understand culture. I am
-                        the nucleus.
-                      </p>
-                    </TabPane>
-                    <TabPane tabId="iconPills2">
-                      <p>
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus. I think that’s a
-                        responsibility that I have, to push possibilities, to
-                        show people, this is the level that things could be at.
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at.
-                      </p>
-                    </TabPane>
-                    <TabPane tabId="iconPills3">
-                      <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. So when you get something that has
-                        the name Kanye West on it, it’s supposed to be pushing
-                        the furthest possibilities. I will be the leader of a
-                        company that ends up being worth billions of dollars,
-                        because I got the answers. I understand culture. I am
-                        the nucleus.
-                      </p>
-                    </TabPane>
-                    <TabPane tabId="iconPills4">
-                      <p>
-                        "I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus. I think that’s a
-                        responsibility that I have, to push possibilities, to
-                        show people, this is the level that things could be at."
-                      </p>
-                    </TabPane>
-                  </TabContent>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col className="ml-auto mr-auto" md="10" xl="6">
-              <p className="category">Tabs with Background on Card</p>
+              <p className="category">What do we do</p>
               <Card>
                 <CardHeader>
                   <Nav
@@ -157,7 +43,7 @@ function Tabs() {
                           setPills("1");
                         }}
                       >
-                        Home
+                        Educate
                       </NavLink>
                     </NavItem>
                     <NavItem>
@@ -169,7 +55,7 @@ function Tabs() {
                           setPills("2");
                         }}
                       >
-                        Profile
+                        Measure
                       </NavLink>
                     </NavItem>
                     <NavItem>
@@ -181,7 +67,7 @@ function Tabs() {
                           setPills("3");
                         }}
                       >
-                        Messages
+                        Protect
                       </NavLink>
                     </NavItem>
                     <NavItem>
@@ -193,7 +79,7 @@ function Tabs() {
                           setPills("4");
                         }}
                       >
-                        Settings
+                        Preserve
                       </NavLink>
                     </NavItem>
                   </Nav>
@@ -205,47 +91,22 @@ function Tabs() {
                   >
                     <TabPane tabId="pills1">
                       <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. So when you get something that has
-                        the name Kanye West on it, it’s supposed to be pushing
-                        the furthest possibilities. I will be the leader of a
-                        company that ends up being worth billions of dollars,
-                        because I got the answers. I understand culture. I am
-                        the nucleus.
+                        At Green Future, we prioritize education as a cornerstone of our mission. Through workshops, seminars, and community outreach programs, we provide individuals and organizations with the knowledge and tools they need to understand the importance of sustainability. By empowering people with information on topics such as renewable energy, conservation practices, and waste reduction, we inspire informed decision-making that leads to lasting environmental change.
                       </p>
                     </TabPane>
                     <TabPane tabId="pills2">
                       <p>
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus. I think that’s a
-                        responsibility that I have, to push possibilities, to
-                        show people, this is the level that things could be at.
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at.
+                        Understanding the impact of our actions is crucial to driving effective change. Green Future employs various methods to measure carbon footprints and environmental impacts at both individual and community levels. We utilize data analytics and reporting tools to assess energy usage, waste production, and resource consumption. This quantitative approach enables us to set clear goals, track progress, and implement strategies that lead to measurable improvements in sustainability.
                       </p>
                     </TabPane>
                     <TabPane tabId="pills3">
                       <p>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. So when you get something that has
-                        the name Kanye West on it, it’s supposed to be pushing
-                        the furthest possibilities. I will be the leader of a
-                        company that ends up being worth billions of dollars,
-                        because I got the answers. I understand culture. I am
-                        the nucleus.
+                        Protecting our planet's natural resources is at the heart of Green Future's initiatives. We engage in conservation efforts that safeguard biodiversity and restore habitats through reforestation and wildlife protection programs. By collaborating with local organizations and stakeholders, we work to establish protected areas and promote sustainable land-use practices, ensuring that our ecosystems remain healthy and resilient for future generations.
                       </p>
                     </TabPane>
                     <TabPane tabId="pills4">
                       <p>
-                        "I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus. I think that’s a
-                        responsibility that I have, to push possibilities, to
-                        show people, this is the level that things could be at."
+                        Preservation goes beyond protection; it involves actively maintaining the integrity of our natural world. Green Future advocates for sustainable practices that minimize human impact on the environment, from reducing plastic waste to promoting eco-friendly products. We run campaigns aimed at encouraging responsible consumption and waste management, fostering a culture of preservation within communities. Through these efforts, we strive to ensure that our planet’s beauty and resources are cherished and sustained for years to come.
                       </p>
                     </TabPane>
                   </TabContent>

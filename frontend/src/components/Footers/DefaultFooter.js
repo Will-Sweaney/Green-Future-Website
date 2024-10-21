@@ -15,16 +15,16 @@ function DefaultFooter() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
+                  href="/index"
+                  tag={Link}
                 >
                   Home
                 </a>
               </li>
               <li>
                 <a
-                  href="http://presentation.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
+                  href="#"
+                  tag={Link}
                 >
                   Blog
                 </a>
@@ -39,6 +39,9 @@ function DefaultFooter() {
               </li>
             </ul>
           </nav>
+          <div className="copyright" id="copyright">
+            © {new Date().getFullYear()}, Green Future{" "}
+          </div>
         </Container>
       </footer>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -15,28 +15,37 @@ import {
   Container,
 } from "reactstrap";
 
-function IndexNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
-  React.useEffect(() => {
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 399 ||
-        document.body.scrollTop > 399
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 400 ||
-        document.body.scrollTop < 400
-      ) {
-        setNavbarColor("navbar-transparent");
+function UserIndexNavbar() {
+    const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+    const [collapseOpen, setCollapseOpen] = useState(false);
+    const [username, setUsername] = useState("");
+  
+    useEffect(() => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user && user.username) {
+        setUsername(user.username);
       }
+    }, []);
+  
+    useEffect(() => {
+      const updateNavbarColor = () => {
+        if (document.documentElement.scrollTop > 399 || document.body.scrollTop > 399) {
+          setNavbarColor("");
+        } else if (document.documentElement.scrollTop < 400 || document.body.scrollTop < 400) {
+          setNavbarColor("navbar-transparent");
+        }
+      };
+      window.addEventListener("scroll", updateNavbarColor);
+      return function cleanup() {
+        window.removeEventListener("scroll", updateNavbarColor);
+      };
+    });
+  
+    // Handle logout
+    const handleLogout = () => {
+      localStorage.removeItem("user");
+      window.location.href = "/";
     };
-    window.addEventListener("scroll", updateNavbarColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
   return (
     <>
       {collapseOpen ? (
@@ -120,23 +129,23 @@ function IndexNavbar() {
               </UncontrolledDropdown>
               <UncontrolledDropdown nav>
                 <DropdownToggle
-                  className="nav-link btn-neutral"
-                  caret
-                  color="info"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <i className="now-ui-icons objects_key-25 mr-1"></i>
-                  <p>Login</p>
+                    className="nav-link btn-neutral"
+                    caret
+                    color="info"
+                    href="#pablo"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                  <i className="now-ui-icons users_circle-08 mr-1"></i>
+                  <p>{username ? `Hello, ${username}` : "Account"}</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="/login-page" tag={Link}>
-                    <i className="now-ui-icons business_chart-pie-36 mr-1"></i>
-                    Login
+                  <DropdownItem>
+                    <i className="now-ui-icons users_circle-08 mr-1"></i>
+                    Account
                   </DropdownItem>
-                  <DropdownItem to="/signup-page" tag={Link}>
-                    <i className="now-ui-icons design_bullet-list-67 mr-1"></i>
-                    Sign Up
+                  <DropdownItem onClick={handleLogout}>
+                    <i className="now-ui-icons ui-1_simple-remove mr-1"></i>
+                    Logout
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -148,4 +157,4 @@ function IndexNavbar() {
   );
 }
 
-export default IndexNavbar;
+export default UserIndexNavbar;

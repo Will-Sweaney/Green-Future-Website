@@ -42,11 +42,7 @@ function LandingPage() {
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Who we are?</h2>
                 <h5 className="description">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record low maximum sea ice extent tihs year down
-                  to low ice extent in the Pacific and a late drop in ice extent
-                  in the Barents Sea.
+                  At Green Future, we are dedicated to promoting sustainability and environmental stewardship. Our mission is to empower communities through education, innovative solutions, and collaborative projects that address climate change and promote a healthier planet. We believe that by fostering awareness and encouraging eco-friendly practices, we can create a brighter, greener future for generations to come.
                 </h5>
               </Col>
             </Row>
@@ -62,11 +58,9 @@ function LandingPage() {
                     }}
                   >
                     <p className="blockquote blockquote-info">
-                      "Over the span of the satellite record, Arctic sea ice has
-                      been declining significantly, while sea ice in the
-                      Antarctichas increased very slightly" <br></br>
+                      "Green Future exemplifies the power of community-driven initiatives in the fight against climate change." <br></br>
                       <br></br>
-                      <small>-NOAA</small>
+                      <small>-CDA</small>
                     </p>
                   </div>
                   <div
@@ -86,37 +80,13 @@ function LandingPage() {
                     }}
                   ></div>
                   <h3>
-                    So what does the new record for the lowest level of winter
-                    ice actually mean
+                    So what are our goals?
                   </h3>
                   <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
+                    Our primary goal is to combat climate change by advocating for sustainable practices across various sectors. We aim to reduce carbon footprints by promoting the use of renewable energy sources, such as solar, wind, and hydroelectric power. By working with local communities, businesses, and policymakers, we strive to facilitate the transition from fossil fuels to cleaner energy alternatives. Our initiatives include workshops, educational programs, and partnerships with renewable energy providers to empower individuals and organizations to make the switch.
                   </p>
                   <p>
-                    For a start, it does not automatically follow that a record
-                    amount of ice will melt this summer. More important for
-                    determining the size of the annual thaw is the state of the
-                    weather as the midnight sun approaches and temperatures
-                    rise. But over the more than 30 years of satellite records,
-                    scientists have observed a clear pattern of decline,
-                    decade-by-decade.
-                  </p>
-                  <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
+                    Ultimately, our vision at Green Future is to inspire a global movement toward sustainability. We believe that by working together and embracing innovative solutions, we can address environmental challenges and foster a more resilient planet. Through education, collaboration, and community engagement, we aim to create lasting change that benefits both people and the Earth. Join us in our mission to improve the planet for today and future generations.
                   </p>
                 </Col>
               </Row>
@@ -125,7 +95,7 @@ function LandingPage() {
         </div>
         <div className="section section-team text-center">
           <Container>
-            <h2 className="title">Here is our team</h2>
+            <h2 className="title">We are green future</h2>
             <div className="team">
               <Row>
                 <Col md="4">
@@ -135,41 +105,11 @@ function LandingPage() {
                       className="rounded-circle img-fluid img-raised"
                       src={require("assets/img/avatar.jpg")}
                     ></img>
-                    <h4 className="title">Romina Hadid</h4>
-                    <p className="category text-info">Model</p>
+                    <h4 className="title">Sofia Henderson</h4>
+                    <p className="category text-info">Co-Founder</p>
                     <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
+                      As co-founder of Green Future, I believe that our collective commitment to sustainability can create a ripple effect of positive change, inspiring individuals and communities to embrace a greener way of life.
                     </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
                   </div>
                 </Col>
                 <Col md="4">
@@ -179,33 +119,11 @@ function LandingPage() {
                       className="rounded-circle img-fluid img-raised"
                       src={require("assets/img/ryan.jpg")}
                     ></img>
-                    <h4 className="title">Ryan Tompson</h4>
-                    <p className="category text-info">Designer</p>
+                    <h4 className="title">Liam Thornewood</h4>
+                    <p className="category text-info">Mission Director</p>
                     <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
+                      As the Mission Director of Green Future, I am driven by the belief that through education and collaboration, we can empower communities to take actionable steps toward sustainability and ensure a healthier planet for future generations.
                     </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-linkedin"></i>
-                    </Button>
                   </div>
                 </Col>
                 <Col md="4">
@@ -215,41 +133,11 @@ function LandingPage() {
                       className="rounded-circle img-fluid img-raised"
                       src={require("assets/img/eva.jpg")}
                     ></img>
-                    <h4 className="title">Eva Jenner</h4>
-                    <p className="category text-info">Fashion</p>
+                    <h4 className="title">Aveline Hartley</h4>
+                    <p className="category text-info">Lead Campaign Manager</p>
                     <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
+                      As the Lead Campaign Manager at Green Future, I am passionate about crafting impactful narratives that inspire action and unite people in our shared mission to create a more sustainable and equitable world.
                     </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-google-plus"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-youtube"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
                   </div>
                 </Col>
               </Row>
@@ -258,8 +146,8 @@ function LandingPage() {
         </div>
         <div className="section section-contact-us text-center">
           <Container>
-            <h2 className="title">Want to work with us?</h2>
-            <p className="description">Your project is very important to us.</p>
+            <h2 className="title">Contact us</h2>
+            <p className="description">Share your thoughts or ask questions.</p>
             <Row>
               <Col className="text-center ml-auto mr-auto" lg="6" md="8">
                 <InputGroup
@@ -290,7 +178,7 @@ function LandingPage() {
                     </InputGroupText>
                   </InputGroupAddon>
                   <Input
-                    placeholder="Email..."
+                    placeholder="Your Email..."
                     type="text"
                     onFocus={() => setLastFocus(true)}
                     onBlur={() => setLastFocus(false)}
@@ -310,8 +198,7 @@ function LandingPage() {
                     block
                     className="btn-round"
                     color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    href="/landing-page"
                     size="lg"
                   >
                     Send Message

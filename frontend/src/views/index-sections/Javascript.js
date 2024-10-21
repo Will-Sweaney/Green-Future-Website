@@ -1,252 +1,46 @@
 import React from "react";
-// react plugins that creates an input with a date picker
-import Datetime from "react-datetime";
 // reactstrap components
 import {
-  Button,
-  FormGroup,
   Container,
-  Modal,
-  ModalBody,
   Row,
   Col,
-  UncontrolledTooltip,
-  PopoverBody,
-  PopoverHeader,
-  UncontrolledPopover,
 } from "reactstrap";
 
 // core components
 
 function Javascript() {
-  const [modal1, setModal1] = React.useState(false);
-  const [modal2, setModal2] = React.useState(false);
   return (
     <>
       <div className="section section-javascript" id="javascriptComponents">
         <Container>
-          <h3 className="title">Javascript components</h3>
+          <h3 className="title">Our motivation</h3>
           <Row id="modals">
             <Col md="6">
-              <h4>Modal</h4>
-              <Button
-                color="primary"
-                className="mr-1"
-                onClick={() => setModal1(true)}
-              >
-                Launch Modal
-              </Button>
-              <Modal isOpen={modal1} toggle={() => setModal1(false)}>
-                <div className="modal-header justify-content-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    <i className="now-ui-icons ui-1_simple-remove"></i>
-                  </button>
-                  <h4 className="title title-up">Modal title</h4>
-                </div>
-                <ModalBody>
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean. A small
-                    river named Duden flows by their place and supplies it with
-                    the necessary regelialia. It is a paradisematic country, in
-                    which roasted parts of sentences fly into your mouth.
-                  </p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button color="default" type="button">
-                    Nice Button
-                  </Button>
-                  <Button
-                    color="danger"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-              <Button color="info" onClick={() => setModal2(true)}>
-                Launch Modal Mini
-              </Button>
-              <Modal
-                modalClassName="modal-mini modal-info"
-                toggle={() => setModal2(false)}
-                isOpen={modal2}
-              >
-                <div className="modal-header justify-content-center">
-                  <div className="modal-profile">
-                    <i className="now-ui-icons users_circle-08"></i>
-                  </div>
-                </div>
-                <ModalBody>
-                  <p>Always have an access to your profile</p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button className="btn-neutral" color="link" type="button">
-                    Back
-                  </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    type="button"
-                    onClick={() => setModal2(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-            </Col>
-            <Col md="6">
-              <h4>Popovers</h4>
-              <Button
-                color="default"
-                id="tooltip175489643"
-                type="button"
-                className="mr-1"
-              >
-                On left
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "top" : "left"}
-                target="tooltip175489643"
-                className="popover-primary"
-              >
-                <PopoverHeader>Popover On Left</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip768569110"
-                type="button"
-                className="mr-1"
-              >
-                On top
-              </Button>
-              <UncontrolledPopover placement="top" target="tooltip768569110">
-                <PopoverHeader>Popover on Top</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip966745638"
-                type="button"
-                className="mr-1"
-              >
-                On right
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "bottom" : "right"}
-                target="tooltip966745638"
-              >
-                <PopoverHeader>Popover on Right</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                  <br /> Here will be some very useful information about his
-                  popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button color="default" id="tooltip822900491" type="button">
-                On bottom
-              </Button>
-              <UncontrolledPopover placement="bottom" target="tooltip822900491">
-                <PopoverHeader>Popover on Bottom</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-            </Col>
-            <br></br>
-            <br></br>
-            <Col md="6">
-              <h4>Datepicker</h4>
-              <Row>
-                <Col md="6">
-                  <div className="datepicker-container">
-                    <FormGroup>
-                      <Datetime
-                        timeFormat={false}
-                        inputProps={{ placeholder: "Datetime Picker Here" }}
-                      />
-                    </FormGroup>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-            <Col md="6">
-              <h4>Tooltips</h4>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip116884155"
-                type="button"
-              >
-                On left
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="left"
-                target="tooltip116884155"
-              >
-                Tooltip on left
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip502327420"
-                type="button"
-              >
-                On top
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="top"
-                target="tooltip502327420"
-              >
-                Tooltip on top
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip243887155"
-                type="button"
-              >
-                On bottom
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="bottom"
-                target="tooltip243887155"
-              >
-                Tooltip on bottom
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip"
-                color="default"
-                id="tooltip542703310"
-                type="button"
-              >
-                On right
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="right"
-                target="tooltip542703310"
-              >
-                Tooltip on right
-              </UncontrolledTooltip>
-              <div className="clearfix"></div>
+              <h4>Origins</h4>
+              <h7>
+                Green Future was born from a shared vision among a group of passionate environmental advocates who recognized the urgent need for action in the face of escalating climate challenges. In the early days, the founders came together to discuss the alarming impacts of climate change, pollution, and habitat destruction that they witnessed in their communities. Fueled by a collective desire to make a difference, they formed Green Future with the mission of promoting sustainability and empowering individuals to take meaningful steps toward protecting the planet.
+              </h7>
               <br></br>
               <br></br>
+              <h7>
+                From its inception, Green Future has focused on fostering a deep connection between people and nature. The organization began with grassroots initiatives, including local clean-up events and educational workshops, aimed at raising awareness about environmental issues and encouraging community involvement. As support grew, so did the scope of their projects, expanding to include renewable energy advocacy, biodiversity conservation, and sustainable waste management. This evolution reflects the understanding that protecting the planet requires a multifaceted approach that addresses various interconnected challenges.
+              </h7>
+            </Col>
+            <Col md="6">
+              <h4>Goals</h4>
+              <h7>
+                Green Future continues to protect the planet because the need for action has never been more critical. Climate change, habitat loss, and pollution threaten the very ecosystems that sustain life. The organization is driven by a commitment to create a sustainable future for generations to come. By empowering individuals and communities with the knowledge and tools they need to make environmentally responsible choices, Green Future believes that collective action can lead to substantial change. Each initiative, whether it’s promoting renewable energy, conserving biodiversity, or encouraging sustainable practices, contributes to a larger movement toward a healthier planet.
+              </h7>
+              <br></br>
+              <br></br>
+              <h7>
+                Moreover, the team at Green Future understands that environmental protection is not just about preserving nature; it’s also about social justice and equity. They work to ensure that all communities have access to clean air, water, and green spaces, recognizing that marginalized populations often bear the brunt of environmental degradation. By advocating for equitable policies and engaging diverse voices in their mission, Green Future strives to create a more just and sustainable world, where every individual can thrive in harmony with the environment.
+              </h7>
+              <br></br>
+              <br></br>
+              <h7>
+                Through education, advocacy, and community engagement, Green Future remains steadfast in its mission to protect the planet. The organization believes that hope and action are intertwined; by inspiring individuals to take ownership of their environmental impact, they can ignite a powerful movement toward sustainability that reverberates across communities and ultimately shapes a better future for our planet.
+              </h7>
             </Col>
           </Row>
         </Container>
